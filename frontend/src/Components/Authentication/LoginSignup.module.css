@@ -1,0 +1,50 @@
+.input {
+  padding: 8px;
+  border: 1px solid lightgray;
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.showButton {
+  position: absolute;
+  background: #e2e8f0;
+  padding: 0 10px;
+  top: 6px;
+  height: 1.7rem;
+  right: 8px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.loginButton,
+.signupButton {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 0;
+  border-radius: 3px;
+  background: #3f2b96;
+  color: white;
+}
+
+.guestButton {
+  width: 100%;
+  margin-top: 8px;
+  padding: 8px 0;
+  border-radius: 3px;
+  background: red;
+  color: white;
+}
+
+.loginButton:focus,
+.loginButton:active,
+.loginButton:hover {
+  background: #6a5aaf;
+}
+
+.guestButton:focus,
+.guestButton:active,
+.guestButton:hover {
+  background: rgb(255, 73, 73);
+}

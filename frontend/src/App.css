@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&family=Ysabeau:wght@500&display=swap");
+.App {
+  background-image: linear-gradient(to right, #a8c0ff, #3f2b96);
+  min-height: 100vh;
+  font-family: "Ysabeau", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(136, 136, 136, 0.281);
+}
