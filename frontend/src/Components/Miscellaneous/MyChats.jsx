@@ -15,16 +15,16 @@ const MyChats = ({ fetchAgain }) => {
 
   const fetchChats = async () => {
     try {
-      const { data } = await axios.get(`/api/chat`, {
-        headers: {
-          Authorization: `Bearer ${user.token}`,
-        },
-      });
+      const { data } = await axios.get(
+        `/api/chat?timestamp=${new Date().getTime()}`,
+        {
+          headers: {
+            Authorization: `Bearer ${user.token}`,
+          },
+        }
+      );
       // console.log(data);
       setChats(data);
-      // console.log(chats[0].users[1].name);
-      // console.log(chats[0].users[0].name);
-      // console.log(chats);
     } catch (error) {
       toast({
         title: "Field Error",
@@ -36,12 +36,11 @@ const MyChats = ({ fetchAgain }) => {
     }
   };
 
-  // console.log(chats);
   useEffect(() => {
     setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));
     fetchChats();
+    // console.log(chats);
   }, [fetchAgain]);
-  // console.log(chats);
 
   return (
     <Box
@@ -78,7 +77,12 @@ const MyChats = ({ fetchAgain }) => {
         h={"80vh"}
         bg={"white"}>
         {chats ? (
-          <Stack overflowY={"scroll"}>
+          <Stack
+            overflowY={"scroll"}
+            bg={"whitesmoke"}
+            p={3}
+            h={"100%"}
+            borderRadius={5}>
             {chats.map((chat) => (
               <Box
                 onClick={() => setSelectedChat(chat)}

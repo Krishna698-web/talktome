@@ -20,10 +20,10 @@ import animationData from "../../Animation/107605-typing.json";
 import Lottie from "react-lottie";
 
 // from the local host
-const ENDPOINT = "http://localhost:5000";
+// const ENDPOINT = "http://localhost:5000";
 
 // from the backend server
-// const ENDPOINT = "https://talktome-server.vercel.app/";
+const ENDPOINT = "https://talktome-server.vercel.app/";
 
 var socket, selectedChatCompare;
 
@@ -36,7 +36,8 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [typing, setTyping] = useState(false);
   const [isTyping, setIsTyping] = useState(false);
 
-  const { user, selectedChat, setSelectedChat } = ChatState();
+  const { user, selectedChat, setSelectedChat, notification, setNotification } =
+    ChatState();
   const toast = useToast();
 
   const defaultOptions = {
@@ -99,11 +100,15 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
         selectedChatCompare._id !== newMessageReceived.chat._id
       ) {
         // give Notification
+        if (!notification.includes(newMessageReceived)) {
+          setNotification([newMessageReceived, ...notification]);
+        }
       } else {
         setMessages([...messages, newMessageReceived]);
       }
     });
   });
+  // console.log(notification);
 
   const sendMessage = async (event) => {
     if (event.key === "Enter" && newMessage) {
