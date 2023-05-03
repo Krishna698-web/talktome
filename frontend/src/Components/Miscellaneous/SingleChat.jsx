@@ -19,7 +19,12 @@ import io from "socket.io-client";
 import animationData from "../../Animation/107605-typing.json";
 import Lottie from "react-lottie";
 
+// from the local host
 const ENDPOINT = "http://localhost:5000";
+
+// from the backend server
+// const ENDPOINT = "https://talktome-server.vercel.app/";
+
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
@@ -219,6 +224,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                   type="text"
                   onChange={typingHandler}
                   value={newMessage}
+                  marginTop={2}
                 />
               </FormControl>
             )}

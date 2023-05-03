@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button, Spinner, Stack, Text, useToast } from "@chakra-ui/react";
+import { Box, Button, Stack, Text, useToast } from "@chakra-ui/react";
 import { ChatState } from "../../Context/ChatProvide";
 import axios from "axios";
 import { AddIcon } from "@chakra-ui/icons";
@@ -15,12 +15,16 @@ const MyChats = ({ fetchAgain }) => {
 
   const fetchChats = async () => {
     try {
-      const { data } = await axios.get("/api/chat", {
+      const { data } = await axios.get(`/api/chat`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
       });
+      // console.log(data);
       setChats(data);
+      // console.log(chats[0].users[1].name);
+      // console.log(chats[0].users[0].name);
+      // console.log(chats);
     } catch (error) {
       toast({
         title: "Field Error",
@@ -32,10 +36,12 @@ const MyChats = ({ fetchAgain }) => {
     }
   };
 
+  // console.log(chats);
   useEffect(() => {
     setLoggedUser(JSON.parse(localStorage.getItem("userInfo")));
     fetchChats();
   }, [fetchAgain]);
+  // console.log(chats);
 
   return (
     <Box

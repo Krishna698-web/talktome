@@ -37,7 +37,7 @@ const Login = () => {
         "/api/user/login",
         { email, password },
         {
-          header: {
+          headers: {
             "Content-type": "application/json",
           },
         }
@@ -79,7 +79,7 @@ const Login = () => {
           required
         />
       </div>
-      <div style={{ margin: "5px 0" }} id="password" isRequired>
+      <div style={{ margin: "5px 0" }} id="password">
         <label>Password</label>
         <div style={{ position: "relative" }}>
           <input
@@ -98,14 +98,14 @@ const Login = () => {
       <button className={styles.loginButton} onClick={submitHandler}>
         Login
       </button>
-      <button
+      {/* <button
         className={styles.guestButton}
         onClick={() => {
           setEmail("guest@gmail.com");
           setPassword("guest1234");
         }}>
         Get Guest User Crediatials
-      </button>
+      </button> */}
     </>
   );
 };

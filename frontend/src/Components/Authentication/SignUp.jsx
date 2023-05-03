@@ -66,7 +66,7 @@ const SignUp = () => {
 
     if (!name || !email || !password || !confirmPassword) {
       toast({
-        title: "Please fill the reqired field",
+        title: "Please fill the required field",
         status: "warning",
         duration: 5000,
         isClosable: true,
@@ -197,7 +197,6 @@ const SignUp = () => {
           p={1.5}
           accept="image/*"
           onChange={(e) => postDetails(e.target.files[0])}
-          required
         />
       </div>
       <button className={styles.signupButton} onClick={submitHandler}>

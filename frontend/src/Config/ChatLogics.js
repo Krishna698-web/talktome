@@ -1,11 +1,3 @@
-const getSender = (loggedUser, users) => {
-    return users[0]._id === loggedUser._id ? users[1].name : users[0].name;
-}
-
-const getSenderFull = (loggedUser, users) => {
-    return loggedUser._id === users[0]._id ? users[1] : users[0];
-}
-
 const isSameSender = (messages, m, i, userId) => {
     return (
         i < messages.length - 1 &&
@@ -36,6 +28,17 @@ const isSameSenderMargin = (messages, m, i, userId) => {
 
 const isSameUser = (messages, m, i) => {
     return i > 0 && messages[i - 1].sender._id === m.sender._id;
+}
+
+const getSender = (loggedUser, users) => {
+    if (!users || users.length !== 2) return null;
+    const otherUser = users.find(user => user._id !== loggedUser._id);
+    console.log(otherUser)
+    return otherUser ? otherUser.name : null;
+}
+
+const getSenderFull = (loggedUser, users) => {
+    return loggedUser._id === users[0]._id ? users[1] : users[0];
 }
 
 module.exports = { getSender, getSenderFull, isSameSender, isLastMessage, isSameSenderMargin, isSameUser };
