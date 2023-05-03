@@ -24,7 +24,6 @@ import Lottie from "react-lottie";
 
 // from the backend server
 const ENDPOINT = "https://talktome-server.vercel.app/";
-
 var socket, selectedChatCompare;
 
 const SingleChat = ({ fetchAgain, setFetchAgain }) => {
