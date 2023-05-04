@@ -78,7 +78,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
   // To connect to Socket.io
   useEffect(() => {
-    socket = io(ENDPOINT);
+    socket = io(ENDPOINT, { path: "/socket.io" });
     socket.emit("setup", user);
     socket.on("connected", () => setSocketConnected(true));
     socket.on("typing", () => setIsTyping(true));
