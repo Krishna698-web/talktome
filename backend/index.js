@@ -28,10 +28,14 @@ app.use('/api/message', messageRoutes);
 // Code for Deployment
 const __dirname1 = path.resolve();
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname1, "../frontend/build")));
+    app.use(express.static(path.join(__dirname, "../frontend/build")));
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname1, "..", "frontend", "build", "index.html"));
+        res.sendFile(path.resolve(__dirname, "..", "frontend", "build", "index.html"));
+        console.log(path.join(__dirname1, "..", "frontend", "build", "index.html"));
     })
+    app.get("*", (req, res) => {
+    })
+
 } else {
     app.get('/', (req, res) => {
         res.send('hello there I am listening')
@@ -52,7 +56,7 @@ const server = app.listen(PORT);
 const io = require('socket.io')(server, {
     pingTimeout: 60000,
     cors: {
-        origin: 'https://talk-tome.netlify.app/', methods: ['GET', 'POST'],
+        origin: 'http://localhost:3000'
     }
 })
 io.on('connection', (socket) => {
