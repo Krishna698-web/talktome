@@ -18,6 +18,14 @@
     {
       "src": "/(.*)",
       "dest": "/"
+    },
+    {
+      "src": "/api/.*",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/build/index.html"
     }
   ]
 }
