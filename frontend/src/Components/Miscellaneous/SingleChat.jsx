@@ -20,7 +20,8 @@ import animationData from "../../Animation/107605-typing.json";
 import Lottie from "react-lottie";
 
 // from the local host
-const ENDPOINT = "https://talktome-one.vercel.app/";
+// const ENDPOINT = "https://talktome-one.vercel.app/";
+const ENDPOINT = "http://localhost:5000";
 
 // from the backend server
 // const ENDPOINT = "https://talktome-server.vercel.app/";
