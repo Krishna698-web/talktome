@@ -6,6 +6,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = "https://talktome-server.vercel.app/";
 // axios.defaults.withCredentials = true;
+// axios.defaults.baseURL = "http://localhost:5000/";
 
 function App() {
   return (
