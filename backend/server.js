@@ -13,8 +13,8 @@ const cors = require('cors')
 
 dotenv.config();
 const PORT = process.env.PORT || 5000;
-// function that used to connect to mongoDB
-connectDB();
+
+connectDB(); // function that used to connect to mongoDB
 
 app.use(express.json()); //to accept data as json
 
