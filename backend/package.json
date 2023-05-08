@@ -2,10 +2,10 @@
   "name": "mern-chat-app",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node backend/server.js",
-    "server": "nodemon backend/server.js"
+    "start": "nodemon index.js",
+    "server": "nodemon index.js"
   },
   "author": "Krishna Khandelwal",
   "license": "ISC",
