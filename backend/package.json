@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "server": "nodemon index.js"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "vercel-build": "npm install && npm run build"
   },
   "author": "Krishna Khandelwal",
   "license": "ISC",
@@ -19,5 +20,11 @@
     "mongoose": "^7.0.4",
     "nodemon": "^2.0.22",
     "socket.io": "^4.6.1"
+  },
+  "vercel": {
+    "build": {
+      "src": "index.js",
+      "use": "@vercel/node"
+    }
   }
 }
