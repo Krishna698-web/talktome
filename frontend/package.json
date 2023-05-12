@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://127.0.0.1:5000",
-  "homepage": "https://talktome-one.vercel.app/",
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
     "@chakra-ui/react": "^2.6.0",
@@ -48,11 +47,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "vercel": {
-    "build": {
-      "src": "build",
-      "use": "@vercel/static-build"
-    }
   }
 }

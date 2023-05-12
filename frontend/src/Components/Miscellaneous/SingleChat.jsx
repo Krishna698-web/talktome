@@ -22,7 +22,7 @@ import Lottie from "react-lottie";
 // from the local host
 // const ENDPOINT = "http://localhost:5000";
 
-const ENDPOINT = "https://talktome-one.vercel.app/";
+const ENDPOINT = "https://talktome-server.vercel.app/";
 
 var socket, selectedChatCompare;
 

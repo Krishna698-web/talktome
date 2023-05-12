@@ -5,11 +5,12 @@
 /.pnp
 .pnp.js
 
+/frontend/build
+/build
 # testing
 /coverage
 
 # production
-# /build
 
 # misc
 .DS_Store

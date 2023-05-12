@@ -4,7 +4,7 @@ import HomePage from './Pages/HomePage';
 import Chatpage from './Pages/Chatpage';
 import axios from 'axios';
 
-// axios.defaults.baseURL = "";
+axios.defaults.baseURL = "https://talktome-server.vercel.app/";
 // axios.defaults.withCredentials = true;
 // axios.defaults.baseURL = "http://localhost:5000/";
 

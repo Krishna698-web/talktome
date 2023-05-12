@@ -28,14 +28,11 @@ app.use('/api/message', messageRoutes);
 // Code for Deployment
 const __dirname1 = path.resolve();
 if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, "../frontend/build")));
+    app.use(express.static(path.join(__dirname, "https://talk-tome.netlify.app/")));
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname1, "..", "frontend", "build", "index.html"));
-        console.log(path.join(__dirname1, "..", "frontend", "build", "index.html"));
+        res.sendFile(path.resolve(__dirname1, "https://talk-tome.netlify.app/", "index.html"));
+        console.log(path.join(__dirname1, "https://talk-tome.netlify.app/", "index.html"));
     })
-    app.get("*", (req, res) => {
-    })
-
 } else {
     app.get('/', (req, res) => {
         res.send('hello there I am listening')
@@ -56,9 +53,10 @@ const server = app.listen(PORT);
 const io = require('socket.io')(server, {
     pingTimeout: 60000,
     cors: {
-        origin: 'https://talktome-one.vercel.app/'
+        origin: '*'
     }
 })
+
 io.on('connection', (socket) => {
     // console.log('connect to soket.io');
 
